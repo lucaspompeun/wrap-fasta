@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Wrap Fasta - EngBio</title>    
+      <link rel="stylesheet" href="./style.css">  
+</head>
+
+<body>
+    <body>
+    <div class = "wrapper">
+     <h1 class = "header">WRAP FASTA</h1>
+    
+    <form>
+  <label class = "select" for="ZmlsZXMKfiles">Select a FASTA file:</label></br><input class = "button" type="file" id="ZmlsZXMKfiles" multiple="true"/>
+</form>
+<pre id="ac921c19f1aff"></pre>
+<script type="application/ecmascript">
+	
+function handleFileSelectFasta(evt)
+	{
+	var files = evt.target.files; // FileList object
+	
+	if(files.length==0) return;
+	var pre= document.getElementById("ac921c19f1aff");
+	while(pre.hasChildNodes()) pre.removeChild( pre.firstChild );
+	
+	for(var i=0;i < files.length;++i)
+		{
+		var reader = new FileReader();
+		reader.onprogress=function(evt) {}
+		reader.onloadend=function(e) 
+			{
+			if(e.target.result==null) return;
+			var lines=e.target.result.split(/[\n\r]/);
+			
+			var dna="";
+			var title="";
+			var i=0;
+			var line;
+			for(;;)
+				{
+				if(i==lines.length || (line=lines[i])[0]=='>')
+					{
+					if(dna.length != 0)
+						{
+						pre.appendChild(document.createTextNode(title+"\n"));
+						while(dna.length != 0)
+							{
+							var n=Math.min(dna.length,50);
+							pre.appendChild(document.createTextNode(dna.substring(0,n)+"\n"));
+							dna= dna.substring(n);
+							}
+						}
+					if(i===lines.length) break;
+					title=line;
+					dna="";
+					}
+				else
+					{
+					dna+=line.trim();
+					}
+				++i;
+				}
+			};
+		reader.readAsText(files[i]);
+		}
+	}
+document.getElementById('ZmlsZXMKfiles').addEventListener('change', handleFileSelectFasta, false);
+</script>
+  </body>
+</html>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+  
+
+    <script  src="./script.js"></script>
+
+
+
+
+</body>
+
+</html>
