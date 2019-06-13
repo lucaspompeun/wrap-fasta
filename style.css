@@ -1,0 +1,45 @@
+@import url(//fonts.googleapis.com/css?family=Oswald);
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body {
+  background-color: #ba1b1d;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header, .button {
+  font-family: 'Oswald';
+  color: white;
+}
+
+.header {
+  letter-spacing: 4pt;
+  font-size: 3rem;
+}
+
+.select{
+  font-family: 'Oswald';
+  color: white;
+  font-size: 2rem
+}
+
+.button {
+  letter-spacing: 2pt;
+  color: #ba1b1d;
+  background: white;
+  border: white;
+  outline:0;
+  font-size: 24px;
+  margin-top:auto;
+}
+
+.wrapper {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
