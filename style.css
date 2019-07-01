@@ -24,6 +24,12 @@ body {
   font-size: 2rem
 }
 
+.info{
+  font-family: 'Oswald';
+  color: white;
+  font-size: 1rem
+}
+
 .button {
   letter-spacing: 2pt;
   color: #ba1b1d;
