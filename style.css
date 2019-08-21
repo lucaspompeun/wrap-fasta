@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 body {
-  background-color: #ba1b1d;
+  background-color: #1b2836;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,7 +10,7 @@ body {
 
 .header, .button {
   font-family: 'Oswald';
-  color: white;
+  color: #fffffa;
 }
 
 .header {
